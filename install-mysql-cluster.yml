@@ -1,0 +1,27 @@
+- hosts: all
+  become: true
+  tasks:
+  - include_role:
+      name: mysqlCluster
+      tasks_from: install-bundle.yml
+
+- hosts: management
+  become: true
+  tasks:
+  - include_role:
+      name: mysqlCluster
+      tasks_from: config-management.yml
+
+- hosts: data
+  become: true
+  tasks:
+  - include_role:
+      name: mysqlCluster
+      tasks_from: config-data.yml
+
+- hosts: sql
+  become: true
+  tasks:
+  - include_role:
+      name: mysqlCluster
+      tasks_from: config-sql.yml

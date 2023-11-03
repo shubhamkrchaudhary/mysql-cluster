@@ -1,0 +1,2 @@
+- debug:
+    msg: "Begin Bundle Installation on all cluster nodes"
