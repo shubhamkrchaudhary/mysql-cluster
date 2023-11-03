@@ -1,2 +1,7 @@
 ---
 # defaults file for mysqlCluster
+mangement_node: 192.168.56.105
+data1: 192.168.56.106
+data2: 192.168.56.106
+sql1: 192.168.56.106
+sql2: 192.168.56.106

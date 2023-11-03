@@ -1,2 +1,11 @@
 - debug:
     msg: "Configuring management node"
+
+- name: Make a directory
+  command: mkdir -p /var/lib/mysql-cluster
+- name: Copy file config.ini into mysql-cluster directory
+  template: 
+    src: /home/gslab/config.j2
+    dest: /var/lib/mysql-cluster/config.ini
+- name: Start the management node
+  command: ndb_mgmd --config-file=/var/lib/mysql-cluster/config.ini
